@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -20,13 +20,81 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <meta content="#4c00ff" data-react-helmet="true" name="theme-color">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    $(document).ready(function(){
+    $(window).scroll(function(){
+    var light_pos = $('#white_div').offset().top;
+    var light_height = $('#white_div').height();
+    var menu_pos = $('.NavigationButton').offset().top;
+    var scroll = $(window).scrollTop();
+
+    if(menu_pos > light_pos && menu_pos < (light_pos + light_height)) {
+        $('.NavigationButton').addClass('menu_black');
+      $('.NavigationButton').removeClass('menu_white');
+    }
+    else {
+        $('.NavigationButton').removeClass('menu_black');
+      $('.NavigationButton').addClass('menu_white');
+    }
+
+  })
+})
+  </script>
 </head>
 
 <body>
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <nav class="bg-white bg-fixed border-gray-200 px-2 sm:px-4 py-2.5 drop-shadow-lg">
+    <div class="container flex flex-wrap justify-between items-center mx-auto">
+      <a href="#" class="flex">
+        <img src="icon.png" alt="Logo" class="h-12 rounded-full">
+      </a>
+      <button id="show" onclick="showMenu()" data-collapse-toggle="mobile-menu" type="button" class="hidden inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden focus:outline-none">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+       </button>
+
+      <button id="hide" onclick="hideMenu()" data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden focus:outline-none">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </button>
+
+      <div class="w-full md:w-auto" id="mobile-menu">
+        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+          <li>
+            <a href="#about" class="block py-2 pr-4 pl-3 text-gray-400 border-b md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0">About</a>
+          </li>
+          <li>
+            <a href="#work" class="block py-2 pr-4 pl-3 text-gray-400 border-b md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0">Work</a>
+          </li>
+          <li>
+            <a href="#pricing" class="block py-2 pr-4 pl-3 text-gray-400 border-b md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0">Pricing</a>
+          </li>
+          <li>
+            <a href="#contact" class="block py-2 pr-4 pl-3 text-gray-400 border-b md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="about" class="container flex flex-wrap items-center mx-auto mt-20 rounded-lg bg-purple-500">
+    <h2 class="text-6xl font-bold text-center mx-auto text-white mt-20">Hello, I'm Magery</h2>
+    <p class="text-white text-2xl mx-40 mt-20 mb-40 text-center">
+      I am a 14-year-old developer, and I have 4 years of experience in the creator industry. Currently, I am
+      experienced in graphics designing, programming and web development. In all these years of experience, I have
+      worked with a few noteable people in the industry, each of them classifying my work as quality. The tools I use,
+      namely, PyCharm, Photoshop and Adobe Illustrator are considered as advanced by many and help me provide quality
+      work.
+    </p>
+  </div>
+
+
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
@@ -34,7 +102,7 @@
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+    ga('create', 'G-ZRR7QYE313', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
