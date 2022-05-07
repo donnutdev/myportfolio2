@@ -261,3 +261,44 @@ textarea {
   }
 }
 
+.container1{
+	position: relative;
+    width: 100%;
+    height: auto;
+	margin-top: 30px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper{
+    width: 80%;
+    height: fit-content;
+}
+
+.swiper-wrapper{
+	align-items: center;
+}
+
+.swiper-slide img{
+  border-radius: 30px;
+    width: 100%;
+	margin: auto;
+}
+
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+  border-radius: 10px;
+    color: #fff;
+	padding: 30px 20px;
+	transition: 0.5s;
+}
+
+.swiper .swiper-pagination-bullet-active{
+    background: #fff;
+}
+
+.swiper .swiper-button-prev:hover, .swiper .swiper-button-next:hover{
+	background: rgba(255,255,255,0.1);
+	transition: 0.5s;
+}
+

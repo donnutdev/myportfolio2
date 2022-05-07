@@ -20,36 +20,26 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+
+  <link rel="icon" href="favicon.ico">
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <meta content="#4c00ff" data-react-helmet="true" name="theme-color">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
     $(document).ready(function(){
-    $(window).scroll(function(){
-    var light_pos = $('#white_div').offset().top;
-    var light_height = $('#white_div').height();
-    var menu_pos = $('.NavigationButton').offset().top;
-    var scroll = $(window).scrollTop();
 
-    if(menu_pos > light_pos && menu_pos < (light_pos + light_height)) {
-        $('.NavigationButton').addClass('menu_black');
-      $('.NavigationButton').removeClass('menu_white');
-    }
-    else {
-        $('.NavigationButton').removeClass('menu_black');
-      $('.NavigationButton').addClass('menu_white');
-    }
-
-  })
-})
+    })
   </script>
 </head>
 
 <body>
 
   <!-- Add your site or application content here -->
-  <nav class="bg-white bg-fixed border-gray-200 px-2 sm:px-4 py-2.5 drop-shadow-lg">
+  <nav class="bg-white sticky top-0 z-50 border-gray-200 px-2 sm:px-4 py-2.5 drop-shadow-lg">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <a href="#" class="flex">
         <img src="icon.png" alt="Logo" class="h-12 rounded-full">
@@ -73,31 +63,69 @@
             <a href="#work" class="block py-2 pr-4 pl-3 text-gray-400 border-b md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0">Work</a>
           </li>
           <li>
-            <a href="#pricing" class="block py-2 pr-4 pl-3 text-gray-400 border-b md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0">Pricing</a>
-          </li>
-          <li>
             <a href="#contact" class="block py-2 pr-4 pl-3 text-gray-400 border-b md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <div id="about" class="container flex flex-wrap items-center mx-auto mt-20 rounded-lg bg-purple-500">
-    <h2 class="text-6xl font-bold text-center mx-auto text-white mt-20">Hello, I'm Magery</h2>
-    <p class="text-white text-2xl mx-40 mt-20 mb-40 text-center">
-      I am a 14-year-old developer, and I have 4 years of experience in the creator industry. Currently, I am
-      experienced in graphics designing, programming and web development. In all these years of experience, I have
-      worked with a few noteable people in the industry, each of them classifying my work as quality. The tools I use,
-      namely, PyCharm, Photoshop and Adobe Illustrator are considered as advanced by many and help me provide quality
-      work.
-    </p>
+  <div id="about">
+    <div id="about-sub" class="container flex flex-wrap items-center mx-auto mt-20 rounded-lg bg-purple-500 drop-shadow-lg">
+      <h2 class="text-6xl font-bold text-center mx-auto text-white mt-20">Hello, I'm Magery</h2>
+      <p class="text-white text-2xl mx-auto mt-20 mb-40 px-20 text-center">
+        I am a 14-year-old developer, and I have 4 years of experience in the creator industry. Currently, I am
+        experienced in graphics designing, programming and web development. In all these years of experience, I have
+        worked with a few noteable people in the industry, each of them classifying my work as quality. The tools I use,
+        namely, PyCharm, Photoshop and Adobe Illustrator are considered as advanced by many and help me provide quality
+        work.
+      </p>
+    </div>
   </div>
+
+  <div id="work" class="container flex flex-wrap items-center mx-auto mt-20 rounded-lg bg-white drop-shadow-lg">
+    <h2 class="text-6xl font-bold text-center mx-auto text-black mt-10">My Work</h2>
+    <div class="container1 mb-20">
+      <div class="swiper">
+
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="img/PracticeUI.png" alt="practice ui"></div>
+          <!-- Slides -->
+        </div>
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
+
+				<!-- If we need navigation buttons -->
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="container flex flex-wrap flex-col items-center mx-auto mt-20 mb-60 rounded-lg bg-purple-500 drop-shadow-lg">
+    <h2 class="text-6xl font-bold text-center mx-auto text-white mt-20">Contact</h2>
+    <p class="text-white text-2xl mx-auto mt-20 px-20 text-center">
+      You can contact me on Discord and Twitter.
+    </p>
+    <p class="text-white text-3xl mx-auto mt-20 px-20 text-center">
+      Twitter - <a class="text-purple-900" href="https://twitter.com/DevMagery">@DevMagery</a><br>
+      Discord - @Magery#0811
+    </p>
+
+    <h2 class="text-4xl font-bold text-center mx-auto text-white mt-20">Payment</h2>
+    <p class="text-white text-2xl mx-auto mt-20 px-20 mb-40 text-center">
+      All real currency payments are done through PayPal and all Robux payments are done through either gamepass or group funds, with gamepass payments having an additional 30% due to Roblox taxes.
+    </p>
+
+  </div>
+
 
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
